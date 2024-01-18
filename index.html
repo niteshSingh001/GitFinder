@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="GitFinder - Github User Finder">
+    <meta name="description" content="Find and Display a Github User Information with GitFinder">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>GitFinder- Github User Finder</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-group d-flex flex-row justify-content-center  mt-5">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" style="max-width: 25%;" id="userName" name="userName"
+                placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+            <button class="btn btn-primary" type="submit" id="search" onclick="fetchUser()">search</button>
+        </div>
+        <div id="loading" class="text-center mt-2" style="display: none;">Loading...</div>
+        <div class="userProfile mt-5 d-flex flex-row justify-content-start ">
+            <div class="d-flex flex-row text-center" id="profileContainer">
+                <div>
+                    <img id="userImg" src="./assets/images/profile.jpg" class="w-50 rounded-circle card-img-top"
+                        alt="userImg">
+                    <p id="gitURL" class="mt-5">url for my github</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="userName">Nitesh Singh</h5>
+                    <p class="card-text" id="bio">Bio quick example text to build on the card title and make up the bulk
+                        of the
+                        card's
+                        content.</p>
+                    <p class="card-text"><i class="fas fa-heart"></i><span id="location">Location:Kanpur</span></p>
+                    <div id="links"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
