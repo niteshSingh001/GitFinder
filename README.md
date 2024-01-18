@@ -1,6 +1,6 @@
 # Project Title
 
-A brief description of what this project does and who it's for
+Created a web page that displays the public Github repositories belonging to any specific user
 
 ## Tech Stack
 
