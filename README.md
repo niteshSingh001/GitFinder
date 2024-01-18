@@ -27,7 +27,3 @@ Open with VSCode
 ```
 
 Open with live server
-
-```bash
-  npm run start
-```
