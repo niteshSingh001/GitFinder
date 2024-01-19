@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>GitFinder- Github User Finder</title>
 
 </head>
@@ -17,30 +20,33 @@
     <div class="container">
         <div class="input-group d-flex flex-row justify-content-center  mt-5">
             <span class="input-group-text" id="addon-wrapping">@</span>
-            <input type="text" class="form-control" style="max-width: 25%;" id="userName" name="userName"
-                placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-            <button class="btn btn-primary" type="submit" id="search" onclick="fetchUser()">search</button>
+            <input type="text" class="form-control" style="max-width: 25%;" id="usernameInput" name="username"
+                placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"
+                onkeydown="handleEnter(event)">
+            <button class="btn btn-primary" type="submit" id="search" onclick="searchUser()">search</button>
         </div>
-        <div id="loading" class="text-center mt-2" style="display: none;">Loading...</div>
-        <div class="userProfile mt-5 d-flex flex-row justify-content-start ">
-            <div class="d-flex flex-row text-center" id="profileContainer">
-                <div>
-                    <img id="userImg" src="./assets/images/profile.jpg" class="w-50 rounded-circle card-img-top"
-                        alt="userImg">
-                    <p id="gitURL" class="mt-5">url for my github</p>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title" id="userName">Nitesh Singh</h5>
-                    <p class="card-text" id="bio">Bio quick example text to build on the card title and make up the bulk
-                        of the
-                        card's
-                        content.</p>
-                    <p class="card-text"><i class="fas fa-heart"></i><span id="location">Location:Kanpur</span></p>
-                    <div id="links"></div>
-                </div>
-
+        <div id="loader" class="text-center mt-3" style="display: none;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only"></span>
             </div>
         </div>
+        <!-- <div class="userProfile mt-5 d-flex flex-row justify-content-start "> -->
+        <div class="row mt-5" id="profileContainer">
+            <div id="imgContainer"
+                class="col-12 col-md-6 text-center d-flex flex-column justify-content-center align-items-center">
+                <img src="./assets/images/profile.jpg" alt="userImg">
+                <a><i class="fa-solid fa-link"></i> url for my github</a>
+            </div>
+            <div id="bioContainer" class="col-12 col-md-6 text-center pt-5">
+                <h3>Nitesh Singh</h3>
+                <p>Bio goes here</p>
+                <p><i class="fa-solid fa-location-dot"></i> Kanpur
+                </p>
+                <p>my twitter link</p>
+            </div>
+        </div>
+    </div>
+    <div id="resultContainer" class="mt-3"></div>
     </div>
 
 

@@ -4,5 +4,42 @@
   box-sizing: border-box;
 }
 #profileContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
   max-width: 600px;
+  border: 2px solid #dcdcdc; /* Border color */
+  border-radius: 10px; /* Border radius for rounded corners */
+  padding: 20px;
+  background-color: #ecf0f1; /* Background color */
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
+#bioContainer{
+  font-weight: 500;
+  padding-left:50px;
+}
+
+#imgContainer img{
+  width: 200px;
+  height: auto;
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* class="rounded-circle img-fluid pb-2" */
