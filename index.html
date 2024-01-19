@@ -20,8 +20,8 @@
     <div class="container mainDIV">
         <div class="input-group d-flex flex-row justify-content-center  mt-5">
             <span class="input-group-text" id="addon-wrapping">@</span>
-            <input type="text" class="form-control" style="max-width: 25%;" id="usernameInput" name="username"
-                placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"
+            <input type="text" class="form-control" style="max-width: 30%;" id="usernameInput" name="username"
+                placeholder="Enter Github Username" aria-label="Username" aria-describedby="addon-wrapping"
                 onkeydown="handleEnter(event)">
             <button class="btn btn-primary" type="submit" id="search" onclick="searchUser()">search</button>
         </div>
@@ -34,15 +34,14 @@
         <div class="row mt-5" id="profileContainer">
             <div id="imgContainer"
                 class="col-12 col-md-6 text-center d-flex flex-column justify-content-center align-items-center">
-                <img src="./assets/images/profile.jpg" alt="userImg">
-                <a><i class="fa-solid fa-link"></i> url for my github</a>
+                <img src="./assets/images/profile.png" alt="userImg">
+                <a><i class="fa-solid fa-link"></i>https://github.com/jhon_doe </a>
             </div>
             <div id="bioContainer" class="col-12 col-md-6 text-center pt-5">
-                <h3>Nitesh Singh</h3>
+                <h3>John Doe</h3>
                 <p>Bio goes here</p>
-                <p><i class="fa-solid fa-location-dot"></i> Kanpur
-                </p>
-                <p>my twitter link</p>
+                <p><i class="fa-solid fa-location-dot"></i> Orlando</p>
+                <p>Twitter:https://twitter.com/john_doe</p>
             </div>
         </div>
         <div id="repoSelect">
@@ -60,6 +59,7 @@
                     <h3>Repo Name</h3>
                     <p>Description</p>
                     <button class="repoBtn btn btn-primary">Javascript</button>
+                    <button class="repoBtn btn btn-primary">React</button>
                 </div>
                 <div id="repo" class="col-12 offset-md-1  col-md-5 mb-4 repoID">
                     <h3>Repo Name</h3>
