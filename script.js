@@ -9,7 +9,7 @@ function handleEnter(event) {
 async function searchUser() {
   const username = document.getElementById("usernameInput").value.trim();
   const loader = document.getElementById("loader");
-  // const paginationContainer = document.getElementById('pagination');
+  const reposPerPageSelect = document.getElementById("reposPerPageSelect");
 
   if (username === "") {
     alert("Please enter a valid username.");
@@ -20,17 +20,17 @@ async function searchUser() {
     loader.style.display = "block";
 
     const userData = await getUserData(username);
-    const repoData = await getUserRepos(username);
+
+    const reposPerPage = parseInt(reposPerPageSelect.value);
+
+    const repoData = await getUserRepos(username, 1, reposPerPage);
 
     console.log("USER PROFILE", userData);
     console.log("USER REPO", repoData);
     displayUserProfile(userData);
-    displayUserRepo(repoData);
-
-    // Display pagination
-    // displayPagination(repoData.length, paginationContainer);
+    displayUserRepo(repoData, 1);
   } catch (error) {
-    alert("Username not found.");
+    console.log("error", error.message);
   } finally {
     loader.style.display = "none";
   }
@@ -39,15 +39,16 @@ async function searchUser() {
 async function getUserData(username) {
   const response = await fetch(`https://api.github.com/users/${username}`);
   if (!response.ok) {
+    alert("Enter Valid Username");
     throw new Error("User not found.");
   }
 
   return await response.json();
 }
 
-async function getUserRepos(username) {
+async function getUserRepos(username, page = 1, reposPerPage = 10) {
   const response = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=created&per_page=10`
+    `https://api.github.com/users/${username}/repos?sort=created&page=${page}&per_page=${reposPerPage}`
   );
   if (!response.ok) {
     throw new Error("Error fetching repositories.");
@@ -71,8 +72,9 @@ function displayUserProfile(userData) {
     <p>Twitter:${userData.twitter_username}</p>`;
 }
 
-function displayUserRepo(repoData) {
+function displayUserRepo(repoData, currentPage) {
   const repoContainer = document.getElementById("repoContainer");
+  repoContainer.innerHTML = "";
   repoData.forEach((repo) => {
     const repoDiv = document.createElement("div");
     repoDiv.className = "col-12 col-md-6 mb-3 repoID";
