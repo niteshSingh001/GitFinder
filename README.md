@@ -5,7 +5,7 @@ Their is a search bar to enter username to get specific user's profile and repos
 
 ## Tech Stack
 
-**Client:** HTML, CSS, JavaScript, API
+**Client:** HTML, CSS, JavaScript, API , BootStrap 
 
 ## Run Locally
 
