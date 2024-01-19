@@ -25,6 +25,7 @@ async function searchUser() {
     console.log("USER PROFILE", userData);
     console.log("USER REPO", repoData);
     displayUserProfile(userData);
+    displayUserRepo(repoData);
 
     // Display pagination
     // displayPagination(repoData.length, paginationContainer);
@@ -68,4 +69,27 @@ function displayUserProfile(userData) {
     <p>${userData.bio}</p>
     <p><i class="fa-solid fa-location-dot"></i> ${userData.location}</p>
     <p>Twitter:${userData.twitter_username}</p>`;
+}
+
+function displayUserRepo(repoData) {
+  const repoContainer = document.getElementById("repoContainer");
+  repoData.forEach((repo) => {
+    const repoDiv = document.createElement("div");
+    repoDiv.className = "col-12 col-md-6 mb-3 repoID";
+
+    repoDiv.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description || "No description available"}</p>
+            <div class="mt-2">
+                ${repo.topics
+                  .map(
+                    (topic) =>
+                      `<button class="repoBtn btn btn-primary mb-2">${topic}</button>`
+                  )
+                  .join(" ")}
+            </div>
+        `;
+
+    repoContainer.appendChild(repoDiv);
+  });
 }
