@@ -30,6 +30,12 @@
   margin-bottom: 15px;
 }
 
+#repoSelect{
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .repoID h3{
   color:#0d6efd;
 }
@@ -37,6 +43,7 @@
 .repoID {
   line-height: 2;
   border: 2px solid black;
+  border-radius:5px;
   padding: 30px 14px;
 }
  /* pagination */
@@ -73,6 +80,19 @@
   box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
 } 
 
+nav{
+  margin-top: 25px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media (max-width:736px) {
+  .mainDIV{
+    margin-right: 125px;
+  }
+}
 
 
 
