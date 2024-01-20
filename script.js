@@ -179,7 +179,7 @@ function displayUserRepo(repoData, currentPage, reposPerPage) {
 
   repoData.forEach((repo) => {
     const repoDiv = document.createElement("div");
-    repoDiv.className = "col-12 offset-md-1 col-md-5 mb-4 repoID";
+    repoDiv.className = "col-md-12 offset-lg-1 col-lg-5 mb-4 repoID";
     repoDiv.innerHTML = `
             <h3>${repo.name}</h3>
             <p>${repo.description || "No description available"}</p>
